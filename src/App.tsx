@@ -1,47 +1,34 @@
-import { useEffect, useState } from "react";
-import "./App.css";
-import { getJobs } from "./services/jobServices";
+import { useEffect, useState } from 'react';
+import './App.css';
+import { getJobs } from './services/jobServices';
+import type { Jobs } from './models/Job';
 
 function App() {
-	// const [loading, setLoading] = useState(true);
-	const [jobs, setJobs] = useState([]);
-
-	// useEffect(
-	// 	() =>
-	// 		async function fetchJobs() {
-	// 			try {
-	// 				const data: [] = await getJobs();
-	// 				console.log(data);
-	// 			} catch (error) {
-	// 				console.error("failed to fetch jobs", error);
-	// 			} finally {
-	// 				setLoading(false);
-	// 			}
-	// 			if ([].length === 0) {
-	// 				fetchJobs();
-	// 			} else {
-	// 				setLoading(false);
-	// 			}
-	// 		}
-	// );
+  const [jobs, setJobs] = useState<Jobs>();
 
   useEffect(() => {
     const getData = async () => {
       const data = await getJobs();
       setJobs(data);
     };
- 
-    if (jobs.length > 0) return;
 
+    if (jobs && jobs.hits.length > 0) return;
     getData();
   });
 
+  console.log(jobs);
 
-	return (
-		<>
-			<h1>TEST</h1>
-		</>
-	);
+  return (
+    <>
+      <h1>TEST</h1>
+      {jobs?.hits.map((job) => (
+        <div key={job.id}>
+          <h2>{job.headline}</h2>
+          <p>{job.description[0]?.text}</p>
+        </div>
+      ))}
+    </>
+  );
 }
 
 export default App;
