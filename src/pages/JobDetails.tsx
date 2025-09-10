@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { Job } from "../models/Job";
 import { getJob } from "../services/jobServices";
 import { Link, useParams } from "react-router";
+import { Button } from "../components/styled/Buttons";
 
 export const JobDetails = () => {
 	const [job, setJob] = useState<Job>();
@@ -20,6 +21,7 @@ export const JobDetails = () => {
 
 	return (
 		<>
+    <Button>Styled Button</Button>
       <Link to={"/"}>Go back</Link>
 			<h1>{job?.headline}</h1>
 			<h3>{job?.description.text}</h3>
