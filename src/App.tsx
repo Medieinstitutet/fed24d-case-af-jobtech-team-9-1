@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { getJob, getJobs } from "./services/jobServices";
 import type { Job, Jobs } from "./models/Job";
+import { RouterProvider } from "react-router";
+import { router } from "./Router";
 
 function App() {
 	const [jobs, setJobs] = useState<Jobs>();
@@ -35,6 +37,7 @@ function App() {
 
 	return (
 		<>
+			<RouterProvider router={router}></RouterProvider>
 			<h1>TEST</h1>
 			{jobs?.hits.map((job) => (
 				<div key={job.id}>
