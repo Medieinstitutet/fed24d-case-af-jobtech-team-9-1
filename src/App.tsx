@@ -24,7 +24,8 @@ function App() {
       {jobs?.hits.map((job) => (
         <div key={job.id}>
           <h2>{job.headline}</h2>
-          <p>{job.description[0]?.text}</p>
+          <p>{job.description.text}</p>
+          <p>{job.application_deadline}</p>
         </div>
       ))}
     </>
