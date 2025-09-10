@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { Jobs } from '../models/Job';
 import { getJobs } from '../services/jobServices';
+import { Link } from 'react-router';
 
 export const JobList = () => {
   const [jobs, setJobs] = useState<Jobs>();
@@ -20,7 +21,8 @@ export const JobList = () => {
       {jobs?.hits.map((job) => (
         <div key={job.id}>
           <h2>{job.headline}</h2>
-          <p>{job.description.text}</p>
+          <Link to={`/job/${job.id}`}>Got to job</Link>
+          {/* <p>{job.description.text}</p> */}
           <p>{job.application_deadline}</p>
         </div>
       ))}
