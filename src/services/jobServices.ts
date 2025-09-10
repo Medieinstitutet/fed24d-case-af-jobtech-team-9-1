@@ -7,7 +7,7 @@ const BASE_URL = `https://jobsearch.api.jobtechdev.se/search?`;
 const OFFSET = `&offset=0`;
 const LIMIT = `&limit=10`;
 
-export async function getJobs(searchWord: string | null): Promise<Jobs> {
+export async function getJobs(searchWord?: string): Promise<Jobs> {
   let MODIFIED_URL = BASE_URL;
 	if (searchWord) {
 		const Q = `q=${searchWord}`;

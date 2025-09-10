@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react';
-import type { Jobs } from '../models/Job';
+import { useContext, useEffect} from 'react';
 import { getJobs } from '../services/jobServices';
 import { Link } from 'react-router';
+import { JobContext } from '../context/JobContext';
+import { JobActionType } from '../reducers/JobReducer';
 
 export const JobList = () => {
-  const [jobs, setJobs] = useState<Jobs>();
+  const {jobs, dispatch} = useContext(JobContext);
 
   useEffect(() => {
     const getData = async () => {
       const data = await getJobs();
-      setJobs(data);
+      dispatch({ type: JobActionType.SET_JOBS, payload: data });
     };
 
     if (jobs && jobs.hits.length > 0) return;
