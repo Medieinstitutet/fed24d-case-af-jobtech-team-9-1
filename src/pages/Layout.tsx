@@ -4,7 +4,7 @@ import { useReducer } from "react";
 import { JobReducer } from "../reducers/JobReducer";
 
 export const Layout = () => {
-      const [jobs, dispatch] = useReducer(JobReducer); // FIX - Add  initial state
+      const [jobs, dispatch] = useReducer(JobReducer, { hits: [] }); // FIX - Add  initial state
     return<>
     <JobContext.Provider value={{jobs, dispatch}}>
         <header>Header</header>
