@@ -1,14 +1,14 @@
 import { Outlet } from "react-router";
 import { JobContext } from "../context/JobContext";
 import { useReducer } from "react";
-import { JobReducer } from "../reducers/JobReducer";
+import { initialJobState, JobReducer } from "../reducers/JobReducer";
 import { DigiTypography } from "@digi/arbetsformedlingen-react";
 
 export const Layout = () => {
-	const [jobs, dispatch] = useReducer(JobReducer, { hits: [] }); // FIX - Add  initial state
+	const [state, dispatch] = useReducer(JobReducer, initialJobState); // FIX - Add  initial state
 	return (
 		<>
-			<JobContext.Provider value={{ jobs, dispatch }}>
+			<JobContext.Provider value={{ ...state, dispatch }}>
 				<DigiTypography>
 					<header>Header</header>
 					<main>
