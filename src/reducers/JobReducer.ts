@@ -39,19 +39,3 @@ export const JobReducer = (state: JobState, action: JobAction): JobState => {
 			return state;
 	}
 };
-
-// export enum JobActionType {
-//   SET_JOBS = "SET_JOBS",
-//   SET_SEARCH = "SET_SEARCH",
-// }
-
-// export const jobReducer = (state, action) => {
-//   switch (action.type) {
-//     case JobActionType.SET_JOBS:
-//       return { ...state, jobs: action.payload };
-//     case JobActionType.SET_SEARCH:
-//       return { ...state, searchWord: action.payload };
-//     default:
-//       return state;
-//   }
-// };
