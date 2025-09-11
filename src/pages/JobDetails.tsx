@@ -2,7 +2,14 @@ import { useEffect, useState } from "react";
 import type { Job } from "../models/Job";
 import { getJob } from "../services/jobServices";
 import { Link, useParams } from "react-router";
-import { Button } from "../components/styled/Buttons";
+import { DigiInfoCard, DigiLayoutBlock, DigiLinkButton } from "@digi/arbetsformedlingen-react";
+import {
+	InfoCardHeadingLevel,
+	InfoCardType,
+	InfoCardVariation,
+	LayoutBlockVariation,
+	LinkButtonVariation,
+} from "@digi/arbetsformedlingen";
 
 export const JobDetails = () => {
 	const [job, setJob] = useState<Job>();
@@ -21,10 +28,24 @@ export const JobDetails = () => {
 
 	return (
 		<>
-    <Button>Styled Button</Button>
-      <Link to={"/"}>Go back</Link>
-			<h1>{job?.headline}</h1>
-			<h3>{job?.description.text}</h3>
+			<DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
+				<h1>{job?.headline}</h1>
+				<Link to={"/"}>
+					<DigiLinkButton afVariation={LinkButtonVariation.PRIMARY}>
+						Go back
+					</DigiLinkButton>
+				</Link>
+				<DigiInfoCard
+					afHeading={job?.headline}
+					afHeadingLevel={InfoCardHeadingLevel.H2}
+					afType={InfoCardType.TIP}
+					afLinkHref="Frivillig länk"
+					afLinkText="Frivillig länktext"
+					afVariation={InfoCardVariation.PRIMARY}
+				>
+					<p>{job?.description.text}</p>
+				</DigiInfoCard>
+			</DigiLayoutBlock>
 		</>
 	);
 };
