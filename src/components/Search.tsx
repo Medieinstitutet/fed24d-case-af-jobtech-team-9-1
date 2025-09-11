@@ -1,5 +1,4 @@
 import { useContext, useState, type FormEvent } from 'react';
-import { getJobs } from '../services/jobServices';
 import { JobContext } from '../context/JobContext';
 import { JobActionType } from '../reducers/JobReducer';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
@@ -9,24 +8,22 @@ import {
 } from '@digi/arbetsformedlingen';
 
 export const Search = () => {
-  const [searchWord, setSearchWord] = useState('');
+  const [input, setInput] = useState('');
 
-  const { dispatch } = useContext(JobContext);
+  const { searchWord, dispatch } = useContext(JobContext);
 
   // ON CHANGE
   const handleChange = (e: FormEvent) => {
     const target = e.target as HTMLInputElement;
-    setSearchWord(target.value);
+    setInput(target.value);
   };
 
   // ON SUBMIT
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    const response = await getJobs(searchWord);
-    console.log(response);
     dispatch({
-      type: JobActionType.SET_JOBS,
-      payload: response,
+      type: JobActionType.SET_SEARCH,
+      payload: input,
     });
   };
 
