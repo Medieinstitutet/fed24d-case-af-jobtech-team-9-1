@@ -1,7 +1,12 @@
-import { useContext, useState, type ChangeEvent, type FormEvent } from 'react';
+import { useContext, useState, type FormEvent } from 'react';
 import { getJobs } from '../services/jobServices';
 import { JobContext } from '../context/JobContext';
 import { JobActionType } from '../reducers/JobReducer';
+import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
+import {
+  FormInputSearchVariation,
+  FormInputType,
+} from '@digi/arbetsformedlingen';
 
 export const Search = () => {
   const [searchWord, setSearchWord] = useState('');
@@ -9,8 +14,9 @@ export const Search = () => {
   const { dispatch } = useContext(JobContext);
 
   // ON CHANGE
-  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setSearchWord(e.target.value);
+  const handleChange = (e: FormEvent) => {
+    const target = e.target as HTMLInputElement;
+    setSearchWord(target.value);
   };
 
   // ON SUBMIT
@@ -28,15 +34,15 @@ export const Search = () => {
 
   return (
     <>
-      <h1>Search</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="sök"
+        <DigiFormInputSearch
+          afLabel="Hitta lediga jobb"
+          afVariation={FormInputSearchVariation.SMALL}
+          afType={FormInputType.SEARCH}
+          afButtonText="Sök"
           value={searchWord}
           onChange={handleChange}
-        />
-        <button>Sök</button>
+        ></DigiFormInputSearch>
       </form>
     </>
   );
