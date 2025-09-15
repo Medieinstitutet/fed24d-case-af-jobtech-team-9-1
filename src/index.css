@@ -7,4 +7,11 @@
 
 	/* FONT COLORS */
 	/* --digi--color--text--primary: rgb(0, 0, 0); */
+
+  /* --digi--color--icons--primary: red;
+
+  --digi--icon--color: var(--digi--color--icons--primary); */
+
+  /* --digi--icon--height: 20px;
+  --digi--icon--width: 10px; */
 }

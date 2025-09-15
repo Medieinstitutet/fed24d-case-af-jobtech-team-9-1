@@ -24,26 +24,26 @@ export const Qualifications = ({ job }: QualificationsProps) => {
 		{ key: "education_level", label: "Utbildningsnivå" },
 	];
 
-	const renderList = (items: Concept[] | undefined, title: string) => {
+	const renderList = (items: Concept[] | undefined, title: string, key: string) => {
 		if (!items || items.length === 0) return null;
 		return (
-			<>
+			<div key={key}>
 				<h3>{title}</h3>
 				<DigiList afListType={ListType.BULLET}>
 					{items.map((item, i) => (
 						<li key={i}>{item.label}</li>
 					))}
 				</DigiList>
-			</>
+			</div>
 		);
 	};
 
 	const kravContent = categories.map((c) =>
-		renderList(job.must_have?.[c.key], `${c.label} - Krav`)
+		renderList(job.must_have?.[c.key], `${c.label} - Krav`, `must-${c.key}`)
 	);
 
 	const meriterandeContent = categories.map((c) =>
-		renderList(job.nice_to_have?.[c.key], `${c.label} - Meriterande`)
+		renderList(job.nice_to_have?.[c.key], `${c.label} - Meriterande`, `nice-${c.key}`)
 	);
 
 	const hasAny = kravContent.some(Boolean) || meriterandeContent.some(Boolean);
@@ -52,9 +52,9 @@ export const Qualifications = ({ job }: QualificationsProps) => {
 
 	return (
 		<DigiLayoutContainer afVariation={LayoutContainerVariation.STATIC} afVerticalPadding>
-				<h2>Kvalifikationer</h2>
-				{kravContent}
-				{meriterandeContent}
+			<h2>Kvalifikationer</h2>
+			{kravContent}
+			{meriterandeContent}
 		</DigiLayoutContainer>
 	);
 };

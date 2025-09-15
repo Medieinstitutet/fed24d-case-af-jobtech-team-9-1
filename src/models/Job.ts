@@ -26,7 +26,7 @@ export type Job = {
 	workplace_address: WorkplaceAddress;
 	must_have: Requirements;
 	nice_to_have: Requirements;
-	application_contacts: ApplicationContact[];
+	application_details: ApplicationDetails;
 };
 
 
@@ -48,6 +48,9 @@ export type Employer = {
 };
 
 export type WorkplaceAddress = {
+  city: string;
+  street_address: string;
+  postcode: string;
 	municipality: string;
 	region: string;
 	country: string;
@@ -61,10 +64,9 @@ export type Requirements = {
 	education_level: Concept[];
 };
 
-export type ApplicationContact = {
-	name: string | null;
-	description: string | null;
+export type ApplicationDetails = {
+	information: string | null;
+	reference: string | null;
 	email: string | null;
-	telephone: string | null;
-	contact_type: string | null;
+	url: string | null;
 };
