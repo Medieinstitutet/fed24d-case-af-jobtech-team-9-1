@@ -47,20 +47,18 @@ export const JobDetails = () => {
 			<DigiLayoutContainer afVerticalPadding afVariation={LayoutContainerVariation.STATIC}>
 				<Link to={"/"}>
 					<DigiLink af-variation={LinkVariation.LARGE}>
-						<DigiIconChevronLeft/>
+						<DigiIconChevronLeft />
 						<span>Sökresultat</span>
 					</DigiLink>
 				</Link>
 			</DigiLayoutContainer>
 			<DigiLayoutBlock afVariation={LayoutBlockVariation.PRIMARY}>
-				{/* <DigiLayoutMediaObject afAlignment={LayoutMediaObjectAlignment.START}> */}
-					<DigiMediaImage
-						afHeight="100"
-						afUnlazy
-						afSrc={`${job?.logo_url}`}
-						af-alt={`${job?.employer.name}`}
-					></DigiMediaImage>
-				{/* </DigiLayoutMediaObject> */}
+				<DigiMediaImage
+					afHeight="100"
+					afUnlazy
+					afSrc={`${job?.logo_url}`}
+					af-alt={`${job?.employer.name}`}
+				></DigiMediaImage>
 				<h1>{job?.headline}</h1>
 				<h2>{job?.employer.name}</h2>
 				<h4>{job?.occupation.label}</h4>
@@ -123,67 +121,77 @@ export const JobDetails = () => {
 				</DigiLayoutContainer>
 				<h3>Arbetsgivaren</h3>
 				<p>{job?.employer.name}</p>
-				<DigiLinkExternal af-href={job?.employer.url} afTarget="_blank">
-					Till {job?.employer.url}
-				</DigiLinkExternal>
+				<div>
+					{job?.employer.url && (
+						<DigiLinkExternal af-href={job?.employer.url} afTarget="_blank">
+							{`Besök ${job?.employer.url}`}
+						</DigiLinkExternal>
+					)}
+				</div>
 			</DigiLayoutBlock>
 			<DigiLayoutBlock afVerticalPadding afVariation={LayoutBlockVariation.SECONDARY}>
 				<h2>Sök jobbet</h2>
 				<p>
-					Ange referens <strong>{job?.application_details.reference}</strong> i din
-					ansökan
-				</p>
-
-				<span>Ansök senast: </span>
-				<strong>
-					<DigiTypographyTime
-						afVariation={TypographyTimeVariation.PRETTY}
-						afDateTime={job?.application_deadline}
-					/>
-				</strong>
-
-				<p>
+					Ansök senast:
+					<strong>
+						{" "}
+						<DigiTypographyTime
+							afVariation={TypographyTimeVariation.PRETTY}
+							afDateTime={job?.application_deadline}
+						/>
+					</strong>
+					{" - "}
 					<DigiTypographyTime
 						afVariation={TypographyTimeVariation.DISTANCE}
 						afDateTime={job?.application_deadline}
 					/>
 				</p>
+				<div>
+					{job?.application_details.url && (
+						<>
+							<div
+								style={{
+									display: "flex",
+									gap: "0.5rem",
+								}}
+							>
+								<DigiIconGlobe style={{ width: "18px", height: "18px" }} />
+								<h3>Ansök via arbetsgivarens webbplats</h3>
+							</div>
+							<DigiLinkExternal af-href={job.application_details.url} afTarget="_blank">
+								Gå till ansökan
+							</DigiLinkExternal>
+						</>
+					)}
+				</div>
+				<div>
+					{job?.application_details.email && (
+						<>
+							<div
+								style={{
+									display: "flex",
+									gap: "0.5rem",
+								}}
+							>
+								<DigiIconAt style={{ width: "18px", height: "18px" }} />
+								<h3>Ansök via mejl</h3>
+							</div>
+							<span>Mejla din ansökan till </span>
+							<DigiLink af-href={`mailto:${job.application_details.email}`}>
+								{job.application_details.email}
+							</DigiLink>
+						</>
+					)}
+				</div>
+				<div>
+					{job?.application_details.reference && (
+						<p>
+							Ange referens <strong>{job?.application_details.reference}</strong> i
+							din ansökan
+						</p>
+					)}
+				</div>
 			</DigiLayoutBlock>
-
-			{job?.application_details.email && (
-				<DigiLayoutBlock afVerticalPadding afVariation={LayoutBlockVariation.SECONDARY}>
-					<div
-						style={{
-							display: "flex",
-							gap: "0.5rem",
-						}}
-					>
-						<DigiIconAt style={{ width: "18px", height: "18px" }} />
-						<h3>Ansök via mejl</h3>
-					</div>
-					<p>Mejla din ansökan till</p>
-					<DigiLink af-href={`mailto:${job.application_details.email}`}>
-						{job.application_details.email}
-					</DigiLink>
-				</DigiLayoutBlock>
-			)}
-
-			{job?.application_details.url && (
-				<DigiLayoutBlock afVerticalPadding afVariation={LayoutBlockVariation.SECONDARY}>
-					<div
-						style={{
-							display: "flex",
-							gap: "0.5rem",
-						}}
-					>
-						<DigiIconGlobe style={{ width: "18px", height: "18px" }} />
-						<h3>Ansök via arbetsgivarens webbplats</h3>
-					</div>
-					<DigiLink af-href={job.application_details.url} afTarget="_blank">
-						{job.application_details.url}
-					</DigiLink>
-				</DigiLayoutBlock>
-			)}
 		</>
 	);
 };
