@@ -51,7 +51,7 @@ export const Qualifications = ({ job }: QualificationsProps) => {
 	if (!hasAny) return null;
 
 	return (
-		<DigiLayoutContainer afVariation={LayoutContainerVariation.STATIC} afVerticalPadding>
+		<DigiLayoutContainer afVariation={LayoutContainerVariation.STATIC}>
 			<h2>Kvalifikationer</h2>
 			{kravContent}
 			{meriterandeContent}
