@@ -1,4 +1,4 @@
-import { useContext, useState, type FormEvent } from 'react';
+import { useState, useContext, type FormEvent } from 'react';
 import { JobContext } from '../context/JobContext';
 import { JobActionType } from '../reducers/JobReducer';
 import { DigiFormInputSearch } from '@digi/arbetsformedlingen-react';
@@ -7,29 +7,35 @@ import {
   FormInputType,
 } from '@digi/arbetsformedlingen';
 import { getSuggestions } from '../services/suggestionService';
-import type { SuggestionsResponse } from '../models/Suggestions';
+import type { Suggestions, SuggestionsResponse } from '../models/Suggestions';
+import { SuggestionsList } from './SuggestionsList';
 
 export const Search = () => {
   const [input, setInput] = useState('');
-  const [suggestions , setSuggestions] = useState<SuggestionsResponse>({typeahead:[]})
+  const [suggestions, setSuggestions] = useState<Suggestions[]>([]);
 
   const { searchWord, dispatch } = useContext(JobContext);
 
   // ON CHANGE
   const handleChange = async (e: CustomEvent) => {
-  const target = e.target as HTMLInputElement;
-  const value = target.value;
+    const target = e.target as HTMLInputElement;
+    const value = target.value;
 
-  setInput(value);
+    setInput(value);
 
-  if (value.length > 0) {
-    const fetchedSuggestions = await getSuggestions(value);
-    setSuggestions(fetchedSuggestions); 
-  } else {
-    setSuggestions({ typeahead: [] });
-  }
-};
-  console.log(input)
+    if (value.length > 0) {
+      const result: SuggestionsResponse = await getSuggestions(value);
+      setSuggestions(result.typeahead);
+    } else {
+      setSuggestions([]);
+    }
+  };
+
+  // handle selecting a suggestion
+  const handleSelect = (value: string) => {
+    setInput(value);
+    setSuggestions([]);
+  };
 
   // ON SUBMIT
   const handleSubmit = async (e: FormEvent) => {
@@ -52,13 +58,11 @@ export const Search = () => {
           afButtonText="Sök"
           value={input}
           onAfOnInput={handleChange}
-        ></DigiFormInputSearch>
+        />
       </form>
-      <ul>
-        {suggestions.typeahead.map((s) => (
-          <li key={s.value}>{s.value}</li>
-        ))}
-      </ul>
+      {suggestions.length > 0 && (
+        <SuggestionsList suggestions={suggestions} onSelect={handleSelect} />
+      )}
     </>
   );
 };
