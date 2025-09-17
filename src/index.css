@@ -2,7 +2,6 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/fonts/src/fonts.css";
 
 :root {
-
 	/* FONT COLORS */
 	--digi--color--text--primary: #181717;
 	--digi--color--text--secondary: #00005a;
@@ -54,7 +53,7 @@
 	--digi--color--background--neutral-8: #fafafa;
 	--digi--color--background--danger-4: #c7311a;
 
-  /* BORDER */
+	/* BORDER */
 
 	--digi--color--border--primary: #333333;
 	--digi--color--border--secondary: #5c1f7f;
@@ -82,7 +81,7 @@
 	--digi--color--border--inverted-2: #0058a3;
 	--digi--color--border--inverted-3: #33337b;
 
-  /* ICONS */
+	/* ICONS */
 
 	--digi--color--icons--primary: #333333;
 	--digi--color--icons--secondary: #00005a;
@@ -94,42 +93,48 @@
 	--digi--color--icons--warning: #ffe200;
 	--digi--color--icons--danger: #da0000;
 	--digi--color--icons--informative: #0000ff;
-
 }
 
-
 .home {
-	background-color: var(--digi--water-200)
+	background-color: var(--digi--water-200);
 }
 
 /* FOOTER & HEADER */
 
 .header div {
-  background-color: var(--digi--color--background--inverted-1);
+	background-color: var(--digi--color--background--inverted-1);
 }
 
 .header h1 {
-  color: var(--digi--color--text--inverted);
-  margin: 0;
-} 
+	color: var(--digi--color--text--inverted);
+	margin: 0;
+}
 
 .footer div {
-  background-color: var(--digi--color--background--inverted-1);
+	background-color: var(--digi--color--background--inverted-1);
 }
 
 .footer h4 {
-  color: var(--digi--color--text--inverted);
-  margin: 0;
-} 
+	color: var(--digi--color--text--inverted);
+	margin: 0;
+}
 
 .img-wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .page-buttons {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
 }
+
+.search-custom div label {
+	font-size: 1.6rem;
+}
+
+.search-custom div input {
+	max-width: 500px;
+} 
