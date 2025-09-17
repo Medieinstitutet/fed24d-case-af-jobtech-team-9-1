@@ -14,7 +14,7 @@ export const SuggestionsList = ({
   return (
     <ul
       className="suggestions-list"
-      style={{ listStyle: 'none', padding: 0, margin: '4px 0' }}
+      style={{ listStyle: 'none', padding: 0, margin: '4px 0', marginBottom: "1rem"}}
     >
       {suggestions.map((s, i) => (
         <li
@@ -23,7 +23,7 @@ export const SuggestionsList = ({
           style={{
             cursor: 'pointer',
             padding: '6px 10px',
-            background: i === activeIndex ? '#e6f0ff' : 'transparent', // highlight test
+            background: i === activeIndex ? '#4c31902d' : 'transparent', // highlight test
           }}
         >
           {s.value}
