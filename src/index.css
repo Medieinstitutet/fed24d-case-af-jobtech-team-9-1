@@ -18,7 +18,7 @@
 	--digi--color--background--primary: #ffffff;
 	--digi--color--background--secondary: #e7e7e7;
 	--digi--color--background--tertiary: #ffffff;
-	--digi--color--background--inverted-1: #140c54;
+	--digi--color--background--inverted-1: #2d0e55;
 	--digi--color--background--inverted-2: #1616b2;
 	--digi--color--background--inverted-3: #333333;
 	--digi--color--background--inverted-4: #b7ee4a;
@@ -50,14 +50,14 @@
 	--digi--color--background--checkbox-secondary: #00005a;
 	--digi--color--background--checkbox-marker: #ffffff;
 	--digi--color--background--inverted-5: #bdd3e7;
-	--digi--color--background--inverted-6: #0058a3;
+	--digi--color--background--inverted-6: #6700a3;
 	--digi--color--background--neutral-8: #fafafa;
 	--digi--color--background--danger-4: #c7311a;
 
   /* BORDER */
 
 	--digi--color--border--primary: #333333;
-	--digi--color--border--secondary: #4040c2;
+	--digi--color--border--secondary: #5c1f7f;
 	--digi--color--border--tertiary: #95c23e;
 	--digi--color--border--quaternary: #95c23e;
 	--digi--color--border--focus: #95c23e;
@@ -101,3 +101,23 @@
 .home {
 	background-color: var(--digi--water-200)
 }
+
+/* FOOTER & HEADER */
+
+.header div {
+  background-color: var(--digi--color--background--inverted-1);
+}
+
+.header h1 {
+  color: var(--digi--color--text--inverted);
+  margin: 0;
+} 
+
+.footer div {
+  background-color: var(--digi--color--background--inverted-1);
+}
+
+.footer h4 {
+  color: var(--digi--color--text--inverted);
+  margin: 0;
+} 
