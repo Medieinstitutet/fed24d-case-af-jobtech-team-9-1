@@ -1,11 +1,17 @@
+import { DigiLayoutContainer } from '@digi/arbetsformedlingen-react';
 import { JobList } from '../components/JobList';
 import { Search } from '../components/Search';
+import '../index.css';
 
 export const Home = () => {
   return (
-    <>
-      <Search />
-      <JobList />
-    </>
+    <div className="home">
+      <DigiLayoutContainer afVerticalPadding >
+        <div>
+          <Search />
+          <JobList />
+        </div>
+      </DigiLayoutContainer>
+    </div>
   );
 };

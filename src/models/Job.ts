@@ -27,6 +27,7 @@ export type Job = {
 	must_have: Requirements;
 	nice_to_have: Requirements;
 	application_details: ApplicationDetails;
+	publication_date: string;
 };
 
 

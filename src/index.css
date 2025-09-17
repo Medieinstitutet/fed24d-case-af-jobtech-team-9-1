@@ -96,3 +96,8 @@
 	--digi--color--icons--informative: #0000ff;
 
 }
+
+
+.home {
+	background-color: var(--digi--water-200)
+}
