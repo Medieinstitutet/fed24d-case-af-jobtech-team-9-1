@@ -121,3 +121,9 @@
   color: var(--digi--color--text--inverted);
   margin: 0;
 } 
+
+.img-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

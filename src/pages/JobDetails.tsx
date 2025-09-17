@@ -13,6 +13,7 @@ import {
 	DigiLayoutMediaObject,
 	DigiLink,
 	DigiLinkExternal,
+	DigiLoaderSkeleton,
 	DigiMediaImage,
 	DigiTypographyTime,
 } from "@digi/arbetsformedlingen-react";
@@ -24,6 +25,7 @@ import {
 	LayoutBlockVariation,
 	LayoutContainerVariation,
 	LinkVariation,
+	LoaderSkeletonVariation,
 	TypographyTimeVariation,
 } from "@digi/arbetsformedlingen";
 import { Qualifications } from "../components/Qualifications";
@@ -45,6 +47,12 @@ export const JobDetails = () => {
 
 	return (
 		<>
+			{!job && (
+				<DigiLoaderSkeleton
+					afVariation={LoaderSkeletonVariation.SECTION}
+					af-count="4"
+				></DigiLoaderSkeleton>
+			)}
 			<DigiLayoutContainer afVerticalPadding afVariation={LayoutContainerVariation.STATIC}>
 				<Link to={"/"}>
 					<DigiLink af-variation={LinkVariation.LARGE}>
@@ -59,8 +67,8 @@ export const JobDetails = () => {
 						<DigiMediaImage
 							slot="media"
 							// af-height="100"
-              af-unlazy
-              af-width="150"
+							af-unlazy
+							af-width="150"
 							style={{ width: "10px" }}
 							af-src={`${job?.logo_url}`}
 							af-alt={`${job?.employer.name}`}
@@ -68,6 +76,7 @@ export const JobDetails = () => {
 						/>
 					)}
 				</DigiLayoutMediaObject>
+
 				<h1>{job?.headline}</h1>
 				<h2>{job?.employer.name}</h2>
 				<h4>{job?.occupation.label}</h4>
