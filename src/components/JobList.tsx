@@ -95,13 +95,11 @@ export const JobList = () => {
 									{job?.logo_url && (
 										<DigiMediaImage
 											slot="media"
-											// af-height="100"
+											af-height="100"
 											af-unlazy
-											af-width="150"
 											style={{ width: "10px" }}
 											af-src={`${job?.logo_url}`}
 											af-alt={`${job?.employer.name}`}
-											// afObserverOptions={{ rootMargin: "10px", threshold: 0 }}
 										/>
 									)}
 								</DigiLayoutMediaObject>
@@ -110,7 +108,7 @@ export const JobList = () => {
 					</div>
 				))}
 			</div>
-			<div>
+			<div className="page-buttons">
 				<DigiButton
 					afSize={ButtonSize.SMALL}
 					afVariation={ButtonVariation.SECONDARY}
@@ -120,7 +118,7 @@ export const JobList = () => {
 				>
 					Föregående
 				</DigiButton>
-				<span>Page {offset / LIMIT + 1}</span>
+				<span>Sida {offset / LIMIT + 1}</span>
 				<DigiButton
 					afSize={ButtonSize.SMALL}
 					afVariation={ButtonVariation.SECONDARY}
