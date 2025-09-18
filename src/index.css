@@ -18,7 +18,7 @@
 	--digi--color--background--secondary: #e7e7e7;
 	--digi--color--background--tertiary: #ffffff;
 	--digi--color--background--inverted-1: #2d0e55;
-	--digi--color--background--inverted-2: #1616b2;
+	--digi--color--background--inverted-2: #4d16b2;
 	--digi--color--background--inverted-3: #333333;
 	--digi--color--background--inverted-4: #b7ee4a;
 	--digi--color--background--complementary-1: #058470;
@@ -30,7 +30,7 @@
 	--digi--color--background--neutral-5: #f1f7e5;
 	--digi--color--background--neutral-6: #ededed;
 	--digi--color--background--neutral-7: #ddebc1;
-	--digi--color--background--informative: #0000ff;
+	--digi--color--background--informative: #7300ff;
 	--digi--color--background--success-1: #009322;
 	--digi--color--background--success-2: #e9f6ec;
 	--digi--color--background--success-3: #7dc88d;
@@ -46,7 +46,7 @@
 	--digi--color--background--radio-secondary: #00005a;
 	--digi--color--background--radio-marker: #ffffff;
 	--digi--color--background--checkbox-primary: #009322;
-	--digi--color--background--checkbox-secondary: #00005a;
+	--digi--color--background--checkbox-secondary: #1a005a;
 	--digi--color--background--checkbox-marker: #ffffff;
 	--digi--color--background--inverted-5: #bdd3e7;
 	--digi--color--background--inverted-6: #6700a3;
@@ -63,7 +63,7 @@
 	--digi--color--border--success: #009322;
 	--digi--color--border--warning: #ffe200;
 	--digi--color--border--danger: #da0000;
-	--digi--color--border--informative: #1616b2;
+	--digi--color--border--informative: #6916b2;
 	--digi--color--border--inverted: #ffffff;
 	--digi--color--border--neutral-1: #f1f7e5;
 	--digi--color--border--neutral-2: #dddddd;
@@ -75,24 +75,24 @@
 	--digi--color--border--radio-focus: #ffffff;
 	--digi--color--border--checkbox-primary: #009322;
 	--digi--color--border--checkbox-secondary: #333333;
-	--digi--color--border--checkbox-focus: #1616b2;
+	--digi--color--border--checkbox-focus: #7116b2;
 	--digi--color--border--warning-2: #827400;
 	--digi--color--border--warning-3: #8a7a00;
-	--digi--color--border--inverted-2: #0058a3;
-	--digi--color--border--inverted-3: #33337b;
+	--digi--color--border--inverted-2: #9e5ec8;
+	--digi--color--border--inverted-3: #45337b;
 
 	/* ICONS */
 
 	--digi--color--icons--primary: #333333;
 	--digi--color--icons--secondary: #00005a;
 	--digi--color--icons--inverted: #ffffff;
-	--digi--color--icons--complementary-1: #1616b2;
-	--digi--color--icons--complementary-2: #424ae0;
+	--digi--color--icons--complementary-1: #5416b2;
+	--digi--color--icons--complementary-2: #6f42e0;
 	--digi--color--icons--complementary-3: #822998;
 	--digi--color--icons--success: #009322;
 	--digi--color--icons--warning: #ffe200;
 	--digi--color--icons--danger: #da0000;
-	--digi--color--icons--informative: #0000ff;
+	--digi--color--icons--informative: #8c00ff;
 }
 
 .home {
