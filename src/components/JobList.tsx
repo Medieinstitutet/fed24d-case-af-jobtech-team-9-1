@@ -78,7 +78,7 @@ export const JobList = () => {
 										</Link>
 									</DigiLink>
 									<h3>{job.employer.name}</h3>
-									<p>{job.workplace_address.city}</p>
+									<p>{job.workplace_address.municipality}</p>
 									<p>
 										Publicerad&nbsp;
 										<DigiTypographyTime
