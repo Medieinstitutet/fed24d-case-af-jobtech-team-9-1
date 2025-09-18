@@ -1,34 +1,32 @@
 import type { Suggestions } from '../models/Suggestions';
+import { SuggestionsLi, SuggestionsUl } from './styled/StyledSuggestions';
 
 type SuggestionsListProps = {
   suggestions: Suggestions[];
   activeIndex: number;
+  setActiveIndex: (value: number) => void;
   onSelect: (value: string) => void;
 };
 
 export const SuggestionsList = ({
   suggestions,
   activeIndex,
+  setActiveIndex,
   onSelect,
 }: SuggestionsListProps) => {
   return (
-    <ul
-      className="suggestions-list"
-      style={{ listStyle: 'none', padding: 0, margin: '4px 0', marginBottom: "1rem"}}
+    <SuggestionsUl
     >
       {suggestions.map((s, i) => (
-        <li
+        <SuggestionsLi
+          isActive={i === activeIndex}
+          onMouseEnter={() => setActiveIndex(i)}
           key={s.value}
           onClick={() => onSelect(s.value)}
-          style={{
-            cursor: 'pointer',
-            padding: '6px 10px',
-            background: i === activeIndex ? '#4c31902d' : 'transparent', // highlight test
-          }}
         >
           {s.value}
-        </li>
+        </SuggestionsLi>
       ))}
-    </ul>
+    </SuggestionsUl>
   );
 };
