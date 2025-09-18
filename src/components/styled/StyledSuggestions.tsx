@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+type SuggestionItemProps = {
+  $isActive: boolean; 
+};
+
 export const SuggestionsUl = styled.ul`
 max-width: 500px;
   list-style: none;
@@ -11,8 +15,8 @@ max-width: 500px;
   background-color: #fff;
 `;
 
-export const SuggestionsLi =  styled.li<{ isActive: boolean }>`
+export const SuggestionsLi =  styled.li<SuggestionItemProps>`
   cursor: pointer;
   padding: 6px 10px;
-  background: ${({ isActive }) => (isActive ? '#4c31902d' : 'transparent')};
+  background: ${({ $isActive }) => ($isActive ? '#4c31902d' : 'transparent')};
 `;

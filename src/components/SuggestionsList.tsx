@@ -19,7 +19,7 @@ export const SuggestionsList = ({
     >
       {suggestions.map((s, i) => (
         <SuggestionsLi
-          isActive={i === activeIndex}
+          $isActive={i === activeIndex}
           onMouseEnter={() => setActiveIndex(i)}
           key={s.value}
           onClick={() => onSelect(s.value)}
