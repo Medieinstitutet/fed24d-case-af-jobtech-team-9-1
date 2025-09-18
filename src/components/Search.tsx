@@ -73,6 +73,7 @@ export const Search = () => {
         <SuggestionsList
           suggestions={suggestions}
           activeIndex={activeIndex}
+		  setActiveIndex={setActiveIndex}
           onSelect={handleSelect}
         />
       )}
