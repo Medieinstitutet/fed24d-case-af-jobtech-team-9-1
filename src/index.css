@@ -87,7 +87,7 @@
 	--digi--color--icons--secondary: #00005a;
 	--digi--color--icons--inverted: #ffffff;
 	--digi--color--icons--complementary-1: #5416b2;
-	--digi--color--icons--complementary-2: #6f42e0;
+	--digi--color--icons--complementary-2: #6c42e0;
 	--digi--color--icons--complementary-3: #822998;
 	--digi--color--icons--success: #009322;
 	--digi--color--icons--warning: #ffe200;
@@ -97,6 +97,10 @@
 
 .home {
 	background-color: var(--digi--water-200);
+}
+
+.job-header {
+  margin-top: 1rem;
 }
 
 /* FOOTER & HEADER */

@@ -51,7 +51,7 @@ export const JobList = () => {
 
 	return (
 		<>
-			<h2>Jobb</h2>
+			<h2 className="job-header">Jobb</h2>
 			{!jobs.hits.length && (
 				<DigiLoaderSkeleton
 					afVariation={LoaderSkeletonVariation.SECTION}
