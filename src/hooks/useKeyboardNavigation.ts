@@ -1,3 +1,4 @@
+import type { DigiFormInputSearch } from "@digi/arbetsformedlingen/components/digi-form-input-search";
 import { useState } from "react";
 
 export function useKeyboardNavigation<T>(
@@ -6,7 +7,7 @@ export function useKeyboardNavigation<T>(
 ) {
   const [activeIndex, setActiveIndex] = useState(-1);
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent<DigiFormInputSearch>) => {
     if (items.length === 0) return;
 
     if (e.key === "ArrowDown") {
