@@ -138,3 +138,10 @@
 .search-custom div input {
 	max-width: 500px;
 } 
+
+.logo{
+	text-decoration: none;
+}
+.logo:hover{
+	text-decoration: none;
+}
