@@ -48,10 +48,15 @@ export const JobDetails = () => {
 	return (
 		<>
 			{!job && (
-				<DigiLoaderSkeleton
-					afVariation={LoaderSkeletonVariation.SECTION}
-					af-count="4"
-				></DigiLoaderSkeleton>
+				<DigiLayoutContainer
+					afVerticalPadding
+					afVariation={LayoutContainerVariation.STATIC}
+				>
+					<DigiLoaderSkeleton
+						afVariation={LoaderSkeletonVariation.SECTION}
+						af-count="4"
+					></DigiLoaderSkeleton>
+				</DigiLayoutContainer>
 			)}
 			<DigiLayoutContainer afVerticalPadding afVariation={LayoutContainerVariation.STATIC}>
 				<Link to={"/"}>
