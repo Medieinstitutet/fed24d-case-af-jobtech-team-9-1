@@ -45,20 +45,11 @@ Er slutprodukt ska ej innehålla Arbetsförmedlingens logga eller färger. Anpas
 - C:\Work\AssignmentCorrector\backend\repos\fed24d-case-af-jobtech-team-9-1\src\reducers\JobReducer.ts - no-unused-vars - 'SET_JOBS' is defined but never used.,no-unused-vars - 'SET_OFFSET' is defined but never used.,no-unused-vars - 'SET_SEARCH' is defined but never used.
 - C:\Work\AssignmentCorrector\backend\repos\fed24d-case-af-jobtech-team-9-1\src\services\jobServices.ts - no-console - Unexpected console statement.
 
-## 🏆 **Betyg: VG**
-📌 **Motivering:** Uppgiften uppfyller alla G‑krav: data hämtas strukturerat via fetch i tydligt uppdelade tjänster (jobServices, suggestionService), React‑koncept används korrekt (context + reducer för global state, routing, state), och designsystemet används genomgående för presentation. Dessutom har ni implementerat flera Nice‑to‑have: styled components (för förslagslistan), en custom hook (useKeyboardNavigation) och autocomplete via endpointen /complete. Koden är överlag välstrukturerad med tydliga typer (TS) och en bra mappstruktur.
+## 🏆 **Betyg: IG**
+📌 **Motivering:** Kunde inte tolka uppgiften korrekt. Kontrollera manuellt.
 
 💡 **Förbättringsförslag:**  
-- React Router-importer: importera från "react-router-dom" i en webapp (RouterProvider, Link, useParams, createBrowserRouter). Nu importeras flera från "react-router" vilket kan ge oväntat beteende.
-- Undvik ankare i ankare: ni wrappar DigiLink och Link runt varandra på flera ställen (t.ex. i JobList och JobDetails). Använd antingen Link (för intern navigering) eller DigiLinkInternal – inte båda samtidigt.
-- useEffect-dependencies i JobDetails: er effect saknar dependency-array och körs varje render (dubbelt i StrictMode). Lägg till [id] och hantera loading/cleanup för att undvika dubbla nätverksanrop.
-- Fel- och laddhantering: lägg till try/catch i komponenterna och visa felmeddelanden (t.ex. med DigiNotification). Just nu kastas fel i services men fångas inte i UI.
-- Bygg URL med URLSearchParams: encodeURIComponent/URLSearchParams för q/offset/limit; undvik manuellt strängbygge och hantera tomma queries. Centralisera LIMIT så samma värde används i både komponent och service.
-- Paginering: sätt disabled-logik korrekt (föregående/ nästa). Utnyttja API:ets total och offset för att räkna ut sista sidan; visa gärna totalt antal träffar.
-- Debounce och avbrytning av requests: debounce på autocomplete och abortera på snabba inmatningar (AbortController) för bättre UX och mindre nätverkstrafik.
-- Konsekvent prop-namngivning till designkomponenter: håll er till samma stil (afHref/afVariation snarare än af-href/af-variation) enligt React-wrapperns dokumentation för att undvika oförutsägbart beteende.
-- SEO/branding: uppdatera titel (index.html) och favicon så de matchar appen (just nu Vite default). Detta är småsaker men lyfter helheten.
-- Extra bonus: lägg gärna till en enkel graf (t.ex. antal annonser per kommun/yrkesområde) för att visualisera data över tid eller per kategori.
+Automatisk rättning misslyckades. Vänligen kontrollera koden manuellt.
 
 ## 👥 Gruppbidrag
 
